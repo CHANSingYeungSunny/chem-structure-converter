@@ -1,0 +1,46 @@
+你是協助零基礎學生的本機 coding agent。請先讀取完整 chembridge_mvp 專案，再實際執行工程驗證；不要只回傳計劃。若你只是沒有檔案／終端機能力的一般聊天模型，請清楚說明不能實際執行，改為逐步引導我操作，不能編造執行紀錄。
+
+研究題目：Automatically detect any common chemistry structure format (e.g. .mol, .csv and others) and convert it into a usable output such as an image, another file format, or computed properties.
+
+Matthew 指出實際產品是 Torch Molecule Studio，不等於 liugangcode/torch-molecule Python 套件。先完成獨立工程工具，再將它整合到真正 Studio。現有模組不是 Studio 原始碼。
+
+我的背景：零基礎、Windows、顯卡約 4 GB；先以 CPU/RDKit 完成可用功能。核心轉換不需要 LLM 金鑰，不要索取或寫入密鑰。不要為了格式轉換安裝／訓練大型模型。
+
+第一階段：讀碼與核對
+1. 讀 README.md、docs/Engineering_Starter_Guide_zh.pdf、docs/TORCH_MOLECULE_SOURCE_MAP_zh.md、docs/ENGINEERING_PLAN_zh.md 和 docs/SOURCES.md。
+2. 讀 chembridge/io.py、pipeline.py、__main__.py、model_adapter.py、app.py、scripts/ 和 tests/。
+3. 用中文列出輸入→偵測→欄位選擇→解析→驗證→計算→輸出的真實函式與檔案路徑。核對文件宣稱與程式是否一致，不能只讀 README 就說完成。
+
+第二階段：實際執行
+4. 另建 Python 3.12 虛擬環境，勿破壞我的舊環境。安裝 requirements-ui.txt、requirements-dev.txt。
+5. 執行 python scripts/first_steps.py、python scripts/run_demo.py、python -m pytest -q。記錄 OS、Python、套件版本、命令、退出碼、真實輸出。
+6. 預期 demo：molecules.csv=5成功0失敗；mixed_invalid.csv=1成功2失敗；misnamed.csv=偵測 MOL、1成功0失敗。混合資料的 CLI exit 1 是設計結果，不能改成假成功。
+7. 實際開啟 Streamlit 本機介面，上傳上述樣本，檢查圖片、性質、錯誤與 ZIP 下載。此步補足目前只有 AppTest 的 UI 驗證；在報告中區分真實操作、程式測試和未測項目。
+8. 試 ambiguous_columns.csv：不選欄應要求選擇；選 smiles 應成功。檢查壞資料未被偷偷刪除、重跑不覆蓋原目錄。
+9. 發現問題就先在新分支／隔離工作區修改，新增有意義回歸案例，重新測試；保留來源輸入及錯誤證據。
+
+第三階段：真實工作資料驗收
+10. 優先收集使用者實際會上傳的格式，建立人工標記驗收表；不要把固定單元測試通過率寫成格式偵測準確率。測試錯副檔名、缺欄、多分子欄、缺值、無效價態、鹽／電荷／立體化學／同位素、3D座標、不同來源 MOL2。
+11. 分別評估格式識別、拒絕／歧義、讀取成功、誤接受、輸出往返化學圖一致性、metadata／座標保留與耗時。寫清分母、資料來源、版本和排除規則。不要只比字串是否相同。
+12. 針對實際缺口選下一個格式；若引入 Open Babel，先核對官方格式清單及資訊損失，不宣稱支援所有檔案。圖片/PDF 需另一條結構辨識流程，XYZ/PDB 鍵級可能不明，不能默默猜成確定結構。
+
+第四階段：Studio 整合
+13. 查找我明確提供的 Studio repo 或目前工作區中能證明是 Studio 的原碼，確認 remote、README、啟動入口、前後端框架、上傳路由、資料契約。禁止以第三方 torch-molecule fork、Design Molecule Class 或其他研究專案冒充。
+14. 若仍無真正 Studio 原始碼，先完成前面獨立工程工作，然後具體列出欠缺的 repo/ZIP 與為何整合需要它；把整合狀態標成未完成，不能憑空杜撰檔案路徑或說已整合。
+15. 有真正 Studio 後，在不影響既有功能下新增上傳→預覽→選欄→轉換→下載流程。後端重用 convert_file，不複製多份化學邏輯；每個 job 隔離目錄，輸出結構化錯誤與 manifest。公開部署前再補工作佇列、timeout、身份驗證、檔案隔離及負載限制。不要自行發布到外部服務。
+16. 只在明確有預測目標、標籤/正確 checkpoint、單位、適用範圍時才接 torch-molecule。用 model_adapter 保持來源 ID 與順序；訓練/驗證/測試資料獨立，不能把 RDKit 描述符當實驗藥效或把同一驗證集當最終測試集。
+
+第五階段：建立新 GitHub repo 並真正 git push（必要交付）
+17. 讀 docs/GITHUB_DELIVERY_zh.md。建議倉庫名 chem-structure-converter，顯示名稱保留 ChemBridge。先用 gh auth status 與 gh api user --jq .login 核對登入者；預期使用者帳號為 CHANSingYeungSunny。若帳號不符，不可把專案推到他人帳號，先保留本機成果並釐清帳號。不得索取或顯示 access token。
+18. 確認目前不是不相關 repo 的子目錄，檢查遠端名稱是否可用；名稱被佔用時不得覆寫不相關 repo，可選 chem-structure-converter-YYYYMMDD 並記錄實際名稱。檢查 .gitignore 及 staged files，排除 .env、密鑰、虛擬環境、私人真實資料、上傳檔及不必要大檔。納入核心原始碼、合成範例、README、環境要求、文件、提示詞與測試。
+19. 建立新的本機 git repo，git add 明確的交付路徑、檢視 git diff --cached、git commit、設定 main。使用 gh repo create 建立新的遠端 repo（預設 private；已有明確公開要求時使用 public），並 git push -u origin main。使用者已要求本階段的建立與推送，完成正常檢查後直接執行，不要把要求改成可選建議，也不要停在展示命令。
+20. 用 gh repo view、git remote -v 和 git ls-remote 核對 URL／遠端 branch SHA；再到全新目錄 clone，依 README 建環境、跑 demo 和測試。記錄真正的 clone 結果，不能以原工作區測試冒充遠端重現。回傳實際 repo URL、visibility、branch、commit SHA、push 結果與乾淨 clone 的測試結果。沒有登入或網路能力時，先完成本機交付，再準確說明阻塞步驟，不能杜撰 GitHub 連結或宣稱完成。
+
+最後請交付
+A. 能照 README 重跑的程式及 ZIP；核心修改差異與有意義的測試。
+B. 中文報告：問題定義、支援矩陣、架構、關鍵程式片段及白話解說、真實命令與結果、已完成/未完成、資訊損失、下一步。保留完整提示詞。
+C. 3–5 分鐘示範腳本：一個成功案例、一個混合壞資料、一個歧義案例。讓我能指出每個結果來自哪段程式。
+D. 可供我帶回 ChatGPT 的執行摘要，不得包含金鑰／個資；把真正測過與未測的內容分開。
+E. 新 GitHub 倉庫的真實 URL、branch、commit SHA、visibility、push 核對與全新 clone 重現證據。缺任一項就說明未完成範圍。
+
+請從實際讀取專案與檢查環境開始，不要第一步就重寫全部程式。

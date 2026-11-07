@@ -1,0 +1,55 @@
+{
+  "schema": "chembridge.run.v1",
+  "tool_version": "0.1.0",
+  "status": "complete",
+  "created_utc": "2026-11-05T16:16:07.673606+00:00",
+  "input_name": "misnamed.csv",
+  "input_sha256": "25845271a46e0d8e2f38c3587c4c2dbfedfdccc373c77115921c16885ba793db",
+  "detection": {
+    "format": "mol",
+    "reason": "MDL version marker and M  END.",
+    "method": "signature",
+    "suffix_hint": "csv",
+    "warnings": [
+      "Filename suggests csv, but content suggests mol; content takes priority."
+    ]
+  },
+  "source_records": 1,
+  "converted_records": 1,
+  "failed_records": 0,
+  "export_errors": 0,
+  "elapsed_seconds": 0.019,
+  "requested_outputs": [
+    "csv",
+    "json",
+    "smi",
+    "sdf",
+    "mol",
+    "png",
+    "svg",
+    "inchi",
+    "selfies"
+  ],
+  "image_limit": 100,
+  "environment": {
+    "python": "3.12.14",
+    "rdkit": "2025.09.4",
+    "selfies_distribution": "2.2.0",
+    "selfies_module": "2.1.1"
+  },
+  "policy": {
+    "neutralize": false,
+    "strip_salts": false,
+    "tautomer_standardize": false,
+    "deduplicate": false,
+    "preserve_input_coordinates_if_present": true,
+    "draw_on_copy": true,
+    "ml_prediction": false
+  },
+  "limitations": [
+    "Canonical SMILES is RDKit-version-dependent and does not unify tautomers/protonation states.",
+    "MOL/SMILES/InChI/SELFIES may lose source metadata; original bytes and JSON metadata are retained.",
+    "Standard InChI can normalize chemical detail; no universal lossless conversion is claimed.",
+    "Descriptors are RDKit calculations/estimates, not experimental measurements or learned bioactivity predictions."
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "schema": "chembridge.molecules.v1",
+  "molecules": [
+    {
+      "id": "m00001",
+      "record_index": 2,
+      "name": "good",
+      "smiles": "CCO",
+      "properties": {
+        "formula": "C2H6O",
+        "molecular_weight_Da": 46.069,
+        "exact_mass_Da": 46.041864812,
+        "rdkit_logp": -0.0014000000000000123,
+        "tpsa_A2": 20.23,
+        "hbd": 1,
+        "hba": 1,
+        "rotatable_bonds": 0,
+        "rings": 0,
+        "heavy_atoms": 3,
+        "formal_charge": 0,
+        "fragments": 1,
+        "qed": 0.4068079656553945
+      },
+      "metadata": {
+        "id": "good",
+        "smiles": "CCO",
+        "note": "valid"
+      },
+      "warnings": [
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00001.mol",
+        "png": "images/m00001.png",
+        "svg": "images/m00001.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3",
+        "selfies": "[C][C][O]"
+      }
+    }
+  ]
+}

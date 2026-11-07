@@ -1,0 +1,58 @@
+{
+  "delivery_version": "0.1.0",
+  "date_hong_kong": "2026-11-06",
+  "automated_tests": {
+    "passed": 39,
+    "failed": 0,
+    "scope": "fixed small-molecule fixtures, CLI, UI AppTest, fake predictor adapter"
+  },
+  "demo_results": [
+    {
+      "input": "molecules.csv",
+      "format": "csv",
+      "success": 5,
+      "failed": 0
+    },
+    {
+      "input": "mixed_invalid.csv",
+      "format": "csv",
+      "success": 1,
+      "failed": 2
+    },
+    {
+      "input": "misnamed.csv",
+      "format": "mol",
+      "success": 1,
+      "failed": 0
+    }
+  ],
+  "guide_pages": 11,
+  "not_completed": [
+    "Windows native execution",
+    "real browser upload/download acceptance",
+    "real-world format identification benchmark",
+    "true Torch Molecule Studio integration",
+    "real torch-molecule model training or inference",
+    "GitHub repository creation and push"
+  ],
+  "github_plan": {
+    "recommended_name": "chem-structure-converter",
+    "expected_account_to_verify": "CHANSingYeungSunny",
+    "default_visibility": "private",
+    "status": "instructions_ready; current environment has no gh or connected GitHub capability",
+    "required_verification": "remote SHA equals local HEAD; fresh clone demo and tests"
+  },
+  "not_supported": [
+    "arbitrary chemistry documents",
+    "image/PDF structure recognition",
+    "XYZ",
+    "CIF/mmCIF",
+    "CML",
+    "CDX/CDXML",
+    "PDBQT"
+  ],
+  "limited_readers": [
+    "RDKit-compatible MOL2",
+    "PDB only with explicit opt-in, single model, CONECT; chemical review required"
+  ]
+}

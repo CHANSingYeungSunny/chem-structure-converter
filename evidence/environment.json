@@ -1,0 +1,11 @@
+{
+  "python": "3.12.14",
+  "platform": "Linux-6.18.57-x86_64-with-glibc2.39",
+  "packages": {
+    "rdkit": "2025.9.4",
+    "selfies": "2.2.0",
+    "Pillow": "12.3.0",
+    "streamlit": "1.51.0",
+    "pytest": "8.4.2"
+  }
+}

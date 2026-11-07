@@ -1,0 +1,103 @@
+﻿### Page
+- Page URL: http://127.0.0.1:8501/
+- Page Title: ChemBridge 分子格式轉換
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e6]:
+    - generic [ref=e9]:
+      - button "Deploy" [ref=e11] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+  - generic [ref=e19]:
+    - heading "ChemBridge 分子格式轉換" [level=1] [ref=e24]
+    - paragraph [ref=e29]: 上傳結構檔案，查看偵測結果、結構圖、性質及錯誤清單，再下載轉換結果。
+    - paragraph [ref=e33]: 本機小分子工程原型。PDB 僅實驗性支援；圖片與 PDF 的結構辨識尚未支援。
+    - generic [ref=e36]:
+      - paragraph [ref=e39]: 選擇分子結構檔案（支援內容偵測，毋須正確副檔名）
+      - region "選擇分子結構檔案（支援內容偵測，毋須正確副檔名）" [ref=e40] [cursor=pointer]:
+        - button "Choose File" [ref=e41]
+        - generic [ref=e47]:
+          - generic [ref=e48]: Drag and drop file here
+          - generic [ref=e49]: Limit 200MB per file
+        - button "Browse files" [ref=e51]
+      - list [ref=e406]:
+        - listitem [ref=e407]:
+          - generic [ref=e408]:
+            - generic [ref=e413]:
+              - generic "ambiguous_columns.csv" [ref=e414]
+              - generic [ref=e415]: 68.0B
+            - button "Remove ambiguous_columns.csv" [ref=e417] [cursor=pointer]
+    - group [ref=e54]:
+      - generic "keyboard_arrow_down 格式、表格欄位與輸出設定" [active] [ref=e428] [cursor=pointer]:
+        - generic [ref=e56]:
+          - generic [ref=e429]: keyboard_arrow_down
+          - paragraph [ref=e61]: 格式、表格欄位與輸出設定
+      - generic [ref=e432]:
+        - generic [ref=e434]:
+          - paragraph [ref=e437]: 輸入格式
+          - generic [ref=e439]:
+            - generic [ref=e440]:
+              - generic [ref=e441]: auto
+              - combobox "Selected auto. 輸入格式" [ref=e443]
+            - img "open" [ref=e445]
+        - generic [ref=e448]:
+          - paragraph [ref=e451]: CSV/TSV 分子欄位名稱（留空自動偵測）
+          - textbox "CSV/TSV 分子欄位名稱（留空自動偵測）" [ref=e454]:
+            - /placeholder: ""
+        - generic [ref=e456]:
+          - paragraph [ref=e459]: 該欄位的表示方式
+          - generic [ref=e461]:
+            - generic [ref=e462]:
+              - generic [ref=e463]: auto
+              - combobox "Selected auto. 該欄位的表示方式" [ref=e465]
+            - img "open" [ref=e467]
+        - generic [ref=e470]:
+          - paragraph [ref=e473]: 輸出格式
+          - generic [ref=e476]:
+            - generic [ref=e477]:
+              - button "csv, close by backspace" [ref=e478]:
+                - generic "csv" [ref=e479]
+                - generic [ref=e480] [cursor=pointer]
+              - button "json, close by backspace" [ref=e483]:
+                - generic "json" [ref=e484]
+                - generic [ref=e485] [cursor=pointer]
+              - button "smi, close by backspace" [ref=e488]:
+                - generic "smi" [ref=e489]
+                - generic [ref=e490] [cursor=pointer]
+              - button "sdf, close by backspace" [ref=e493]:
+                - generic "sdf" [ref=e494]
+                - generic [ref=e495] [cursor=pointer]
+              - button "mol, close by backspace" [ref=e498]:
+                - generic "mol" [ref=e499]
+                - generic [ref=e500] [cursor=pointer]
+              - button "png, close by backspace" [ref=e503]:
+                - generic "png" [ref=e504]
+                - generic [ref=e505] [cursor=pointer]
+              - button "svg, close by backspace" [ref=e508]:
+                - generic "svg" [ref=e509]
+                - generic [ref=e510] [cursor=pointer]
+              - button "inchi, close by backspace" [ref=e513]:
+                - generic "inchi" [ref=e514]
+                - generic [ref=e515] [cursor=pointer]
+              - button "selfies, close by backspace" [ref=e518]:
+                - generic "selfies" [ref=e519]
+                - generic [ref=e520] [cursor=pointer]
+              - combobox "Selected csv, json, smi, sdf, mol, png, svg, inchi, selfies. 輸出格式" [ref=e524]
+            - generic [ref=e525]:
+              - button "Clear all" [ref=e526] [cursor=pointer]
+              - img "open" [ref=e528] [cursor=pointer]
+        - generic [ref=e531]:
+          - paragraph [ref=e534]: 最多繪製多少個分子
+          - generic [ref=e535]:
+            - spinbutton "最多繪製多少個分子" [ref=e538]: "100"
+            - generic [ref=e539]:
+              - button [ref=e540] [cursor=pointer]
+              - button [ref=e543] [cursor=pointer]
+        - generic [ref=e548] [cursor=pointer]:
+          - checkbox "允許實驗性 PDB 匯入（需 CONECT；必須人工核對化學結構）"
+          - paragraph [ref=e553]: 允許實驗性 PDB 匯入（需 CONECT；必須人工核對化學結構）
+    - button [ref=e64] [cursor=pointer]:
+      - paragraph [ref=e66]: 偵測並轉換
+    - alert [ref=e422]:
+      - paragraph [ref=e427]: "Multiple structure columns: smiles, inchi. Select --column (and optionally --column-format)."
+```

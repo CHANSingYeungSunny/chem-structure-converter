@@ -1,0 +1,12 @@
+{
+  "molecules": [
+    {
+      "name": "ethanol",
+      "smiles": "CCO"
+    },
+    {
+      "name": "aspirin",
+      "smiles": "CC(=O)Oc1ccccc1C(=O)O"
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+COMMAND: C:\Users\Asus\Desktop\Chembridge\chembridge_mvp\.venv\Scripts\python.exe -u -m pip install --disable-pip-version-check --progress-bar off -r C:\Users\Asus\Desktop\Chembridge\chembridge_mvp\requirements-ui.txt -r C:\Users\Asus\Desktop\Chembridge\chembridge_mvp\requirements-dev.txt
+TEMP: C:\Users\Asus\AppData\Local\Temp

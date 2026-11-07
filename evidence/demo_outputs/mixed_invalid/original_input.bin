@@ -1,0 +1,4 @@
+id,smiles,note
+good,CCO,valid
+bad,INVALID,invalid syntax
+missing,,missing structure

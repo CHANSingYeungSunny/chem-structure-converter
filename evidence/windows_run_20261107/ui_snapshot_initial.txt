@@ -1,0 +1,30 @@
+﻿### Page
+- Page URL: http://127.0.0.1:8501/
+- Page Title: ChemBridge 分子格式轉換
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e6]:
+    - generic [ref=e9]:
+      - button "Deploy" [ref=e11] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+  - generic [ref=e19]:
+    - heading "ChemBridge 分子格式轉換" [level=1] [ref=e24]
+    - paragraph [ref=e29]: 上傳結構檔案，查看偵測結果、結構圖、性質及錯誤清單，再下載轉換結果。
+    - paragraph [ref=e33]: 本機小分子工程原型。PDB 僅實驗性支援；圖片與 PDF 的結構辨識尚未支援。
+    - generic [ref=e36]:
+      - paragraph [ref=e39]: 選擇分子結構檔案（支援內容偵測，毋須正確副檔名）
+      - region "選擇分子結構檔案（支援內容偵測，毋須正確副檔名）" [ref=e40] [cursor=pointer]:
+        - button "Choose File" [ref=e41]
+        - generic [ref=e47]:
+          - generic [ref=e48]: Drag and drop file here
+          - generic [ref=e49]: Limit 200MB per file
+        - button "Browse files" [ref=e51]
+    - group [ref=e54]:
+      - generic "keyboard_arrow_right 格式、表格欄位與輸出設定" [ref=e55] [cursor=pointer]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: keyboard_arrow_right
+          - paragraph [ref=e61]: 格式、表格欄位與輸出設定
+    - button [disabled] [ref=e64]:
+      - paragraph [ref=e66]: 偵測並轉換
+```

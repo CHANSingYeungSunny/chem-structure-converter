@@ -1,0 +1,14 @@
+{
+  "repository": "https://github.com/liugangcode/torch-molecule",
+  "commit": "e3466e386c18d449d6e6889446f1109551714efc",
+  "inspected_files": [
+    "torch_molecule/__init__.py",
+    "torch_molecule/base/base.py",
+    "torch_molecule/base/predictor.py",
+    "torch_molecule/utils/graph/graph_from_smiles.py",
+    "torch_molecule/datasets/split.py",
+    "torch_molecule/predictor/gnn/modeling_gnn.py",
+    "torch_molecule/datasets/hub.py"
+  ],
+  "review_date_hong_kong": "2026-11-06"
+}

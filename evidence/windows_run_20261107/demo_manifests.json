@@ -1,0 +1,67 @@
+{
+  "demo_root": "C:\\Users\\Asus\\Desktop\\Chembridge\\chembridge_mvp\\runs\\demo_20261108_001206_328058",
+  "jobs": [
+    {
+      "input": "molecules",
+      "detected_format": "csv",
+      "detection_reason": "Delimited table; structure column must be resolved.",
+      "detection_method": "signature",
+      "suffix_hint": "csv",
+      "warnings": [],
+      "source_records": 5,
+      "converted_records": 5,
+      "failed_records": 0,
+      "export_errors": 0,
+      "status": "complete",
+      "elapsed_seconds": 0.4084,
+      "environment": {
+        "python": "3.12.14",
+        "rdkit": "2025.09.4",
+        "selfies_distribution": "2.2.0",
+        "selfies_module": "2.1.1"
+      }
+    },
+    {
+      "input": "mixed_invalid",
+      "detected_format": "csv",
+      "detection_reason": "Delimited table; structure column must be resolved.",
+      "detection_method": "signature",
+      "suffix_hint": "csv",
+      "warnings": [],
+      "source_records": 3,
+      "converted_records": 1,
+      "failed_records": 2,
+      "export_errors": 0,
+      "status": "partial",
+      "elapsed_seconds": 0.0492,
+      "environment": {
+        "python": "3.12.14",
+        "rdkit": "2025.09.4",
+        "selfies_distribution": "2.2.0",
+        "selfies_module": "2.1.1"
+      }
+    },
+    {
+      "input": "misnamed",
+      "detected_format": "mol",
+      "detection_reason": "MDL version marker and M  END.",
+      "detection_method": "signature",
+      "suffix_hint": "csv",
+      "warnings": [
+        "Filename suggests csv, but content suggests mol; content takes priority."
+      ],
+      "source_records": 1,
+      "converted_records": 1,
+      "failed_records": 0,
+      "export_errors": 0,
+      "status": "complete",
+      "elapsed_seconds": 0.0574,
+      "environment": {
+        "python": "3.12.14",
+        "rdkit": "2025.09.4",
+        "selfies_distribution": "2.2.0",
+        "selfies_module": "2.1.1"
+      }
+    }
+  ]
+}

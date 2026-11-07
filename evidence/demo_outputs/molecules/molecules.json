@@ -1,0 +1,206 @@
+{
+  "schema": "chembridge.molecules.v1",
+  "molecules": [
+    {
+      "id": "m00001",
+      "record_index": 2,
+      "name": "1",
+      "smiles": "CCO",
+      "properties": {
+        "formula": "C2H6O",
+        "molecular_weight_Da": 46.069,
+        "exact_mass_Da": 46.041864812,
+        "rdkit_logp": -0.0014000000000000123,
+        "tpsa_A2": 20.23,
+        "hbd": 1,
+        "hba": 1,
+        "rotatable_bonds": 0,
+        "rings": 0,
+        "heavy_atoms": 3,
+        "formal_charge": 0,
+        "fragments": 1,
+        "qed": 0.4068079656553945
+      },
+      "metadata": {
+        "id": "1",
+        "name": "ethanol",
+        "SMILES": "CCO",
+        "source": "teaching"
+      },
+      "warnings": [
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00001.mol",
+        "png": "images/m00001.png",
+        "svg": "images/m00001.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/C2H6O/c1-2-3/h3H,2H2,1H3",
+        "selfies": "[C][C][O]"
+      }
+    },
+    {
+      "id": "m00002",
+      "record_index": 3,
+      "name": "2",
+      "smiles": "CC(=O)Oc1ccccc1C(=O)O",
+      "properties": {
+        "formula": "C9H8O4",
+        "molecular_weight_Da": 180.15899999999996,
+        "exact_mass_Da": 180.042258736,
+        "rdkit_logp": 1.3101,
+        "tpsa_A2": 63.60000000000001,
+        "hbd": 1,
+        "hba": 3,
+        "rotatable_bonds": 2,
+        "rings": 1,
+        "heavy_atoms": 13,
+        "formal_charge": 0,
+        "fragments": 1,
+        "qed": 0.5501217966938848
+      },
+      "metadata": {
+        "id": "2",
+        "name": "aspirin",
+        "SMILES": "CC(=O)Oc1ccccc1C(=O)O",
+        "source": "teaching"
+      },
+      "warnings": [
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00002.mol",
+        "png": "images/m00002.png",
+        "svg": "images/m00002.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/C9H8O4/c1-6(10)13-8-5-3-2-4-7(8)9(11)12/h2-5H,1H3,(H,11,12)",
+        "selfies": "[C][C][=Branch1][C][=O][O][C][=C][C][=C][C][=C][Ring1][=Branch1][C][=Branch1][C][=O][O]"
+      }
+    },
+    {
+      "id": "m00003",
+      "record_index": 4,
+      "name": "3",
+      "smiles": "c1ccccc1",
+      "properties": {
+        "formula": "C6H6",
+        "molecular_weight_Da": 78.11399999999999,
+        "exact_mass_Da": 78.046950192,
+        "rdkit_logp": 1.6866,
+        "tpsa_A2": 0.0,
+        "hbd": 0,
+        "hba": 0,
+        "rotatable_bonds": 0,
+        "rings": 1,
+        "heavy_atoms": 6,
+        "formal_charge": 0,
+        "fragments": 1,
+        "qed": 0.4426283718993647
+      },
+      "metadata": {
+        "id": "3",
+        "name": "benzene",
+        "SMILES": "c1ccccc1",
+        "source": "teaching"
+      },
+      "warnings": [
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00003.mol",
+        "png": "images/m00003.png",
+        "svg": "images/m00003.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/C6H6/c1-2-4-6-5-3-1/h1-6H",
+        "selfies": "[C][=C][C][=C][C][=C][Ring1][=Branch1]"
+      }
+    },
+    {
+      "id": "m00004",
+      "record_index": 5,
+      "name": "4",
+      "smiles": "C[C@H](N)C(=O)O",
+      "properties": {
+        "formula": "C3H7NO2",
+        "molecular_weight_Da": 89.09399999999998,
+        "exact_mass_Da": 89.047678464,
+        "rdkit_logp": -0.5818000000000003,
+        "tpsa_A2": 63.32000000000001,
+        "hbd": 2,
+        "hba": 2,
+        "rotatable_bonds": 1,
+        "rings": 0,
+        "heavy_atoms": 6,
+        "formal_charge": 0,
+        "fragments": 1,
+        "qed": 0.45135218773770774
+      },
+      "metadata": {
+        "id": "4",
+        "name": "L-alanine",
+        "SMILES": "N[C@@H](C)C(=O)O",
+        "source": "teaching"
+      },
+      "warnings": [
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00004.mol",
+        "png": "images/m00004.png",
+        "svg": "images/m00004.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/C3H7NO2/c1-2(4)3(5)6/h2H,4H2,1H3,(H,5,6)/t2-/m0/s1",
+        "selfies": "[C][C@H1][Branch1][C][N][C][=Branch1][C][=O][O]"
+      }
+    },
+    {
+      "id": "m00005",
+      "record_index": 6,
+      "name": "5",
+      "smiles": "[Cl-].[NH4+]",
+      "properties": {
+        "formula": "H4ClN",
+        "molecular_weight_Da": 53.492000000000004,
+        "exact_mass_Da": 53.003226808,
+        "rdkit_logp": -2.6198,
+        "tpsa_A2": 36.5,
+        "hbd": 1,
+        "hba": 0,
+        "rotatable_bonds": 0,
+        "rings": 0,
+        "heavy_atoms": 2,
+        "formal_charge": 0,
+        "fragments": 2,
+        "qed": 0.31388569328273136
+      },
+      "metadata": {
+        "id": "5",
+        "name": "ammonium_chloride",
+        "SMILES": "[NH4+].[Cl-]",
+        "source": "teaching"
+      },
+      "warnings": [
+        "Multiple fragments retained; descriptors refer to the complete supplied structure.",
+        "2D coordinates generated for MOL/SDF; no 3D geometry was inferred."
+      ],
+      "outputs": {
+        "sdf": "molecules.sdf",
+        "mol": "mol/m00005.mol",
+        "png": "images/m00005.png",
+        "svg": "images/m00005.svg"
+      },
+      "representations": {
+        "inchi": "InChI=1S/ClH.H3N/h1H;1H3",
+        "selfies": "[Cl-1].[NH4+1]"
+      }
+    }
+  ]
+}

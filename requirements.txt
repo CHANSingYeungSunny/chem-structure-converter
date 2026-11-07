@@ -1,0 +1,3 @@
+rdkit==2025.9.4
+selfies==2.2.0
+Pillow>=10,<13

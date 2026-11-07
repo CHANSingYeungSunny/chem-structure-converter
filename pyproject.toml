@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "chembridge-mvp"
+version = "0.1.0"
+description = "Local content-aware molecular structure import, validation and conversion"
+requires-python = ">=3.10,<3.14"
+dependencies = ["rdkit==2025.9.4", "selfies==2.2.0", "Pillow>=10,<13"]
+
+[project.optional-dependencies]
+ui = ["streamlit==1.51.0"]
+test = ["pytest==8.4.2"]
+
+[project.scripts]
+chembridge = "chembridge.__main__:main"
+
+[tool.setuptools.packages.find]
+include = ["chembridge*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

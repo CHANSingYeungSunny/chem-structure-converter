@@ -1,0 +1,60 @@
+﻿### Page
+- Page URL: http://127.0.0.1:8501/
+- Page Title: ChemBridge 分子格式轉換
+### Snapshot
+```yaml
+- generic [ref=e3]:
+  - banner [ref=e6]:
+    - generic [ref=e9]:
+      - button "Deploy" [ref=e11] [cursor=pointer]
+      - button [ref=e15] [cursor=pointer]
+  - generic [ref=e19]:
+    - heading "ChemBridge 分子格式轉換" [level=1] [ref=e24]
+    - paragraph [ref=e29]: 上傳結構檔案，查看偵測結果、結構圖、性質及錯誤清單，再下載轉換結果。
+    - paragraph [ref=e33]: 本機小分子工程原型。PDB 僅實驗性支援；圖片與 PDF 的結構辨識尚未支援。
+    - generic [ref=e36]:
+      - paragraph [ref=e39]: 選擇分子結構檔案（支援內容偵測，毋須正確副檔名）
+      - region "選擇分子結構檔案（支援內容偵測，毋須正確副檔名）" [ref=e40] [cursor=pointer]:
+        - button "Choose File" [ref=e41]
+        - generic [ref=e47]:
+          - generic [ref=e48]: Drag and drop file here
+          - generic [ref=e49]: Limit 200MB per file
+        - button "Browse files" [ref=e51]
+      - list [ref=e68]:
+        - listitem [ref=e69]:
+          - generic [ref=e70]:
+            - generic [ref=e75]:
+              - generic "molecules.csv" [ref=e76]
+              - generic [ref=e77]: 194.0B
+            - button "Remove molecules.csv" [ref=e79] [cursor=pointer]
+    - group [ref=e54]:
+      - generic "keyboard_arrow_right 格式、表格欄位與輸出設定" [ref=e55] [cursor=pointer]:
+        - generic [ref=e56]:
+          - generic [ref=e57]: keyboard_arrow_right
+          - paragraph [ref=e61]: 格式、表格欄位與輸出設定
+    - button [active] [ref=e64] [cursor=pointer]:
+      - paragraph [ref=e66]: 偵測並轉換
+    - paragraph [ref=e97]: 格式：csv；成功：5；失敗：0
+    - alert [ref=e100]:
+      - paragraph [ref=e105]: Delimited table; structure column must be resolved.
+    - generic [ref=e108]:
+      - button "Fullscreen" [ref=e113] [cursor=pointer]
+      - generic [ref=e117]:
+        - img "0" [ref=e119]
+        - img "1" [ref=e121]
+        - img "2" [ref=e123]
+        - img "3" [ref=e125]
+        - img "4" [ref=e127]
+    - generic [ref=e132]:
+      - button "Show/hide columns" [ref=e136] [cursor=pointer]
+      - button "Download as CSV" [ref=e142] [cursor=pointer]
+      - button "Search" [ref=e148] [cursor=pointer]
+      - button "Fullscreen" [ref=e154] [cursor=pointer]
+    - group [ref=e168]:
+      - generic "keyboard_arrow_right 執行紀錄" [ref=e169] [cursor=pointer]:
+        - generic [ref=e170]:
+          - generic [ref=e171]: keyboard_arrow_right
+          - paragraph [ref=e175]: 執行紀錄
+    - button [ref=e178] [cursor=pointer]:
+      - paragraph [ref=e180]: 下載全部結果 ZIP
+```

@@ -1,0 +1,485 @@
+{
+  "version": "0.1.0",
+  "files": [
+    {
+      "path": ".gitignore",
+      "size": 150,
+      "sha256": "37118cbe01bddab3d57202a5e02d384baa5b4bfca70afd842f18e8737eab6410"
+    },
+    {
+      "path": "README.md",
+      "size": 8693,
+      "sha256": "d27a7a48283c3130bc24a4325984392b4f063fff875a6db0891f3e89d6864c27"
+    },
+    {
+      "path": "app.py",
+      "size": 3454,
+      "sha256": "e04b7c0e38d4ff9769bf284c9dc798fce7ff716de2ef3cc228e16ab8a7f03004"
+    },
+    {
+      "path": "chembridge/__init__.py",
+      "size": 171,
+      "sha256": "27a261a73b91891e4fbd84804fa5220474a821524f3224f00e6b3dca57a094ce"
+    },
+    {
+      "path": "chembridge/__main__.py",
+      "size": 1703,
+      "sha256": "d83423b8ef1d7e4aa9c9261f5adbd6a9ce71deb7aa08ab0002970e7fb483b909"
+    },
+    {
+      "path": "chembridge/io.py",
+      "size": 15845,
+      "sha256": "c208bb1f3158e266ed64a232a9fdbb4cb85c66673b36ca98074f034a55f21a06"
+    },
+    {
+      "path": "chembridge/model_adapter.py",
+      "size": 1001,
+      "sha256": "4645ec19bbf7b33ce6237ae75630fc70d420283f475139a6cb72f914162a4924"
+    },
+    {
+      "path": "chembridge/pipeline.py",
+      "size": 10700,
+      "sha256": "9d6193c6e55814d488b91a6fe5f563929b2b1deed24b83171caf88c61cfbd9dc"
+    },
+    {
+      "path": "docs/ENGINEERING_PLAN_zh.md",
+      "size": 5416,
+      "sha256": "89021779b6eb99b9fea2a1e902c0598194cf4393e00d5b3c6462d656e120df3c"
+    },
+    {
+      "path": "docs/Engineering_Starter_Guide_zh.docx",
+      "size": 56510,
+      "sha256": "745ba8fc6662c4b0a43c2d225ae208d3614c8cdd365caf9465cf13ea048db0b2"
+    },
+    {
+      "path": "docs/Engineering_Starter_Guide_zh.pdf",
+      "size": 658485,
+      "sha256": "1f1081a262f274e2ba6b48291646e39d6036025cbcf9b2ae4adc235b8834c684"
+    },
+    {
+      "path": "docs/GITHUB_DELIVERY_zh.md",
+      "size": 3291,
+      "sha256": "f016d8c04b1aa0db13d7223c0eb37670779633b0cccd46f000f6573fde5fd228"
+    },
+    {
+      "path": "docs/SOURCES.md",
+      "size": 3380,
+      "sha256": "274066ad0b9e4597e431060d4f8bf597f1890a494af12a2e706afc77ee3e116a"
+    },
+    {
+      "path": "docs/TORCH_MOLECULE_SOURCE_MAP_zh.md",
+      "size": 5068,
+      "sha256": "c8dc5577599c16ca40091ea0b2acaa3c5c2278be2d5b2cdb89bac43ee6eaf977"
+    },
+    {
+      "path": "evidence/VALIDATION_SUMMARY.json",
+      "size": 1546,
+      "sha256": "2599465882168eb99d4dd8afd180d7220ee2b2688bdf96febfa7fe5cc2c29d9e"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/errors.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/export_errors.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/images/m00001.png",
+      "size": 8614,
+      "sha256": "4ede592061df75f2478595d8f65bc084b7681a1f0d6edc8e550a7a4dd52e9c1b"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/images/m00001.svg",
+      "size": 1995,
+      "sha256": "77b2b4c697beb39f52e1b4c587606754ce6ad33f996140af373f056b62154a8c"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/manifest.json",
+      "size": 1607,
+      "sha256": "1e93ba33eb33b39f55bada726ada29ef265cf31061a72e7ea51712fed50c1f1a"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/mol/m00001.mol",
+      "size": 313,
+      "sha256": "4be51b974a3da2bbc0744411c4ee495b7f3b2ced0a2c385528b4a5b670767c5c"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/molecules.inchi",
+      "size": 41,
+      "sha256": "afd0edc1a84002b280400d45f4b4f2d8230b412c4f332f22ff60a1d9da4f9630"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/molecules.json",
+      "size": 903,
+      "sha256": "2b0f2bd16e5eca7519175c1c8571541de153684bde6fd44a7325b30df839c17b"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/molecules.sdf",
+      "size": 764,
+      "sha256": "9a42aa2aeb3ba973366dea0542caf47934956658bb1600f75d4a883955224c2b"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/molecules.selfies",
+      "size": 17,
+      "sha256": "fde442d88fad56e512a2432a1f1455ccf119d55f56681b29acece488791adb25"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/molecules.smi",
+      "size": 11,
+      "sha256": "24c2ccaf87fd0f1fb1022fe17bfb86de0f9b84e1e2b0fb55bd5e83fbe4d4b6ca"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/original_input.bin",
+      "size": 308,
+      "sha256": "25845271a46e0d8e2f38c3587c4c2dbfedfdccc373c77115921c16885ba793db"
+    },
+    {
+      "path": "evidence/demo_outputs/misnamed/properties.csv",
+      "size": 281,
+      "sha256": "a5353f99c03f972d3146c56bd97e95126e600ee1a3cbc5dbaa9fb700b0c97e16"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/errors.json",
+      "size": 460,
+      "sha256": "130493ffb9dce9077be9cd2fa7cbc9f237cb41371cbcdae0f05264937e6019cc"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/export_errors.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/images/m00001.png",
+      "size": 8614,
+      "sha256": "4ede592061df75f2478595d8f65bc084b7681a1f0d6edc8e550a7a4dd52e9c1b"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/images/m00001.svg",
+      "size": 1995,
+      "sha256": "77b2b4c697beb39f52e1b4c587606754ce6ad33f996140af373f056b62154a8c"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/manifest.json",
+      "size": 1547,
+      "sha256": "dab2ee3c0bb8bf53ab44181721e2c50a7063da837fc4bdaa57389ae4eea6c5b5"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/mol/m00001.mol",
+      "size": 312,
+      "sha256": "91782d3629525216f8285f22891ac7a02d919d71d32116f48249ccc2b285cf58"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/molecules.inchi",
+      "size": 41,
+      "sha256": "afd0edc1a84002b280400d45f4b4f2d8230b412c4f332f22ff60a1d9da4f9630"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/molecules.json",
+      "size": 1064,
+      "sha256": "96855a698c49bae3c98bb21395a2f97fe55daf1d931b2d4d54abc5fa780e493d"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/molecules.sdf",
+      "size": 763,
+      "sha256": "b6e99150d138997773c8b4e74027093e7185a3bbdd5104db2c887f492422cb63"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/molecules.selfies",
+      "size": 17,
+      "sha256": "fde442d88fad56e512a2432a1f1455ccf119d55f56681b29acece488791adb25"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/molecules.smi",
+      "size": 11,
+      "sha256": "24c2ccaf87fd0f1fb1022fe17bfb86de0f9b84e1e2b0fb55bd5e83fbe4d4b6ca"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/original_input.bin",
+      "size": 84,
+      "sha256": "3ac4ae3bbf99ca5b941eb62dde43bfe96a5c97406297589776a33a7c07f3afd3"
+    },
+    {
+      "path": "evidence/demo_outputs/mixed_invalid/properties.csv",
+      "size": 280,
+      "sha256": "b5bda04bcfa844208c7ad368e51d496e90000040bb420e6879bc694f702ea9d1"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/errors.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/export_errors.json",
+      "size": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00001.png",
+      "size": 8614,
+      "sha256": "4ede592061df75f2478595d8f65bc084b7681a1f0d6edc8e550a7a4dd52e9c1b"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00001.svg",
+      "size": 1995,
+      "sha256": "77b2b4c697beb39f52e1b4c587606754ce6ad33f996140af373f056b62154a8c"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00002.png",
+      "size": 22783,
+      "sha256": "61436d46109cc2bb2b38845fddc340fc247fc8b18cbf191bcf46869f6edce899"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00002.svg",
+      "size": 8816,
+      "sha256": "5425e8a912248f92a4d1d3a7b788a2491e291950282f803d9b4dafbb4d0a2feb"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00003.png",
+      "size": 19610,
+      "sha256": "d3cb8b15411a1d0541a2704fca3a4e438248be5250523026b9b0609f5a84a08b"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00003.svg",
+      "size": 3385,
+      "sha256": "2629c5ce4ca207b194903267592608ff11efb350526054afc65e4475d0346c3e"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00004.png",
+      "size": 20244,
+      "sha256": "506ddfb1ad9296c506aebf787a6b23b1c7ce0db39bf248e83f13b7b233307172"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00004.svg",
+      "size": 15153,
+      "sha256": "8b6d202e439a373d0baa95ac2ae684ce5093c58bf40056f44986a7eb72594e39"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00005.png",
+      "size": 3993,
+      "sha256": "bde5680a8bc4a1e4917edb52ea2eb6b2453b6015e7f96a56139bf7c47b9c54ef"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/images/m00005.svg",
+      "size": 2167,
+      "sha256": "034fdada6c73bcc156af76baf41d25460136e58539bb6078fa7bc0ba4eac757a"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/manifest.json",
+      "size": 1544,
+      "sha256": "dc92b6b282eed9f4088a917046ca5e1ddeee242dc00e911e42873e984dbffca8"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/mol/m00001.mol",
+      "size": 309,
+      "sha256": "4d429643bb08bdfff61eb89277fb44165e0df9e8fbe49d16c093f908ca8df6de"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/mol/m00002.mol",
+      "size": 1152,
+      "sha256": "6a5bfa2ec99d8f6fc9a7636357940b88bd8ba28ce60fba4e2bd63bcbec4efcc5"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/mol/m00003.mol",
+      "size": 571,
+      "sha256": "7846df4b9ed32ec64895841eeebf558b9869818fef4fadc6fdf8460dffb90ca9"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/mol/m00004.mol",
+      "size": 558,
+      "sha256": "d5d18925d77b4e33a93dae8f856ee2b40787beddf77188678e9f21084fbd802a"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/mol/m00005.mol",
+      "size": 239,
+      "sha256": "c3340bb7137f9b77383161d4ef82ec96b2121d6c3a37361a5aba51e278d61835"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/molecules.inchi",
+      "size": 258,
+      "sha256": "49b35ecc261257c16cb8477af72be8d1c31cd5d674c705f5b3b2cfe6aff2b797"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/molecules.json",
+      "size": 5623,
+      "sha256": "48c6b3bc45521cee4adc06c5d99d792b5f4170c74fe4b51b4359f2c7f23b4302"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/molecules.sdf",
+      "size": 5107,
+      "sha256": "7695f017eb08c93fe20340b02006637fca430b59e519702e17ccfb6948de9165"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/molecules.selfies",
+      "size": 235,
+      "sha256": "f216d6858119e3590afb79cb98a922df632cdac8d56da29040fba4b3fb87f448"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/molecules.smi",
+      "size": 99,
+      "sha256": "c3d86cbbe57edc5f0c2b6d1f9648cf517517fe970c148ee49f4dadb032e277db"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/original_input.bin",
+      "size": 194,
+      "sha256": "8f6f514d71bae76198cf04670c316aa9b730c79726271c5d5c4c984d893d9a4c"
+    },
+    {
+      "path": "evidence/demo_outputs/molecules/properties.csv",
+      "size": 760,
+      "sha256": "8343f61e7682079c313d2b2890f0749a726401243fa4aa7b495a2583d0a5b92e"
+    },
+    {
+      "path": "evidence/environment.json",
+      "size": 221,
+      "sha256": "e9173677f6badcc136b9ad1ac7cca6612fb0bae0ed0259bb82d51ded1d4b1889"
+    },
+    {
+      "path": "evidence/pytest_results.xml",
+      "size": 4594,
+      "sha256": "d01de46622027d4caec65a6ac9e9746aebd56ae32e4b690527e0d802f63d119b"
+    },
+    {
+      "path": "evidence/test_run.txt",
+      "size": 142,
+      "sha256": "d86caa5e1362391f233f9e8bce0f7b3b0640ce915cb66030dfe5ac4f53a47988"
+    },
+    {
+      "path": "evidence/upstream_source_review.json",
+      "size": 485,
+      "sha256": "48e619d3e4642a25418997cd9adeda403f9fc3bf59552cd65790c91bd5914cd4"
+    },
+    {
+      "path": "examples/ambiguous_columns.csv",
+      "size": 68,
+      "sha256": "f7c072d8a6c7d7329243afa8a89d613504c8a2de49b1cf65dc7fe1a0260b8b89"
+    },
+    {
+      "path": "examples/ethanol.mol",
+      "size": 308,
+      "sha256": "25845271a46e0d8e2f38c3587c4c2dbfedfdccc373c77115921c16885ba793db"
+    },
+    {
+      "path": "examples/ethanol_experimental.pdb",
+      "size": 281,
+      "sha256": "c97a9c2e76229bcf2cda415122b2e2b526d05a16ad5e0dfd0e5e22d41e725553"
+    },
+    {
+      "path": "examples/misnamed.csv",
+      "size": 308,
+      "sha256": "25845271a46e0d8e2f38c3587c4c2dbfedfdccc373c77115921c16885ba793db"
+    },
+    {
+      "path": "examples/mixed_invalid.csv",
+      "size": 84,
+      "sha256": "3ac4ae3bbf99ca5b941eb62dde43bfe96a5c97406297589776a33a7c07f3afd3"
+    },
+    {
+      "path": "examples/molecules.csv",
+      "size": 194,
+      "sha256": "8f6f514d71bae76198cf04670c316aa9b730c79726271c5d5c4c984d893d9a4c"
+    },
+    {
+      "path": "examples/molecules.inchi",
+      "size": 42,
+      "sha256": "9efc4f47453341fa5b9026f11debb04ab8b1c1e1e8ac0acece7e97fbba5c4798"
+    },
+    {
+      "path": "examples/molecules.json",
+      "size": 161,
+      "sha256": "5434fb6e73f3d344537baa664cdbb58d97e3f54ad93beff28995d20815acf482"
+    },
+    {
+      "path": "examples/molecules.sdf",
+      "size": 1539,
+      "sha256": "c498aba1fd9058b0e9146d1d574afe0aad353811ae095063af8b1352ae4b4754"
+    },
+    {
+      "path": "examples/molecules.sdf.gz",
+      "size": 291,
+      "sha256": "fe12822c2479de3fd31dd111788787e6615981b3441f43ec355ff01eea6482b7"
+    },
+    {
+      "path": "examples/molecules.selfies",
+      "size": 18,
+      "sha256": "0b17c1cf83473f2b07d104d8407e597ff1b8c71465e9d391c2edd1cbee3ab91e"
+    },
+    {
+      "path": "examples/molecules.smi",
+      "size": 67,
+      "sha256": "0e0164592c4e2d9e7c78f3f22ab1a9d91aaf725e2213554871ad5e59d0cbae79"
+    },
+    {
+      "path": "examples/molecules.tsv",
+      "size": 54,
+      "sha256": "66ca147114322daf2cb9c2728015681ac6a6984bcddc2dad40465a0bc84bb004"
+    },
+    {
+      "path": "examples/water.mol2",
+      "size": 210,
+      "sha256": "31527a4b8645da2ffdd09a4739a34585fc08850ea0261ec7529408facc4aedd4"
+    },
+    {
+      "path": "prompts/DEEPSEEK_EXECUTION_PROMPT_zh.txt",
+      "size": 6938,
+      "sha256": "8ae4b4ccaef5b4480e54b7b49e35c1574a70ab5d299d4faa054f592ad953f5d7"
+    },
+    {
+      "path": "prompts/RETURN_RESULTS_TO_CHATGPT_zh.txt",
+      "size": 1038,
+      "sha256": "515b8b6530081c3d63958d95dd48204531e640a14ca4ca90b4836d79fee75c2f"
+    },
+    {
+      "path": "pyproject.toml",
+      "size": 584,
+      "sha256": "e19d2e99d7980cb33775c335930a30a7c79ec6b4c2cdf57141948c6d8f174477"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "size": 34,
+      "sha256": "3c3ad6730cf0c0417b77bae38e53c11fa8cd96a34f2f8956998bafc0aaf3ef17"
+    },
+    {
+      "path": "requirements-ui.txt",
+      "size": 38,
+      "sha256": "be4ecb817c22efdea101892eda48105e6c7a0a2ffd0ec183c944b0d59f836992"
+    },
+    {
+      "path": "requirements.txt",
+      "size": 46,
+      "sha256": "11cf2900432e141e838dd8e3f05e74fdb9a153eefc1e5b3ee33570bf116431e7"
+    },
+    {
+      "path": "scripts/first_steps.py",
+      "size": 770,
+      "sha256": "67884ff72fbe15dc1ed110eca4347f951253069b6ef44d9f501c44e5f84ec0d7"
+    },
+    {
+      "path": "scripts/run_demo.py",
+      "size": 972,
+      "sha256": "551a1403e2a274cf4ac01b94a0bba843e5d42b3ba4c99709e1e7c21a057d6c93"
+    },
+    {
+      "path": "start_windows.bat",
+      "size": 488,
+      "sha256": "6e3f76cd2b2720fc25c25f23ccc1257754c40aeb97c751759b13b6d3f8bec1d9"
+    },
+    {
+      "path": "tests/test_adapter.py",
+      "size": 699,
+      "sha256": "7a8742a9aab009e91f746c43a0408abb23b90a9b6cac820f59fa53140239591f"
+    },
+    {
+      "path": "tests/test_optional_ui.py",
+      "size": 848,
+      "sha256": "ebd142974e876f789339c560cadb1237ec6ffbcaed73517ac7a27513f19d842a"
+    },
+    {
+      "path": "tests/test_workflow.py",
+      "size": 10148,
+      "sha256": "b2a2f596de94b993165a105070ab14212e9c04f2b7d3d72c3d78f5912e901c7c"
+    }
+  ]
+}

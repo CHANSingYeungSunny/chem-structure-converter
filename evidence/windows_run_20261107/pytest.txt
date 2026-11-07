@@ -1,0 +1,4 @@
+COMMAND: C:\Users\Asus\Desktop\Chembridge\chembridge_mvp\.venv\Scripts\python.exe -m pytest -q
+..............................................                           [100%]
+46 passed in 32.49s
+EXIT_CODE: 0

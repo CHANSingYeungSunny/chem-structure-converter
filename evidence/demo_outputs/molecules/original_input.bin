@@ -1,0 +1,6 @@
+id,name,SMILES,source
+1,ethanol,CCO,teaching
+2,aspirin,CC(=O)Oc1ccccc1C(=O)O,teaching
+3,benzene,c1ccccc1,teaching
+4,L-alanine,N[C@@H](C)C(=O)O,teaching
+5,ammonium_chloride,[NH4+].[Cl-],teaching

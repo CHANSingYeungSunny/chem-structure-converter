@@ -1,0 +1,17 @@
+請根據我附上的 chembridge_mvp 執行結果繼續協助，不要假設全部完成。
+
+1. 我的作業系統／Python／RDKit／SELFIES／Streamlit 版本：
+2. 實際執行命令及退出碼：
+3. pytest 摘要（通過／失敗／跳過）：
+4. 三個 demo 的 manifest 及成功／失敗數：
+5. 本機介面是否實際上傳／選欄／下載成功：
+6. 真實工作樣本來源、格式與失敗案例：
+7. 程式改動檔案與原因：
+8. 真正 Torch Molecule Studio repo／ZIP 及已確認入口：
+9. 已完成整合的實際路徑／流程，或仍欠缺資料：
+10. 我能解釋的核心函式與目前不懂之處：
+11. 新 GitHub repo URL／visibility／branch／commit SHA：
+12. git push 及遠端 SHA 核對結果：
+13. 從全新 clone 建環境、跑 demo／pytest 的真實結果：
+
+請先審核程式與證據是否一致，再用中文指出下一個最重要的改進。不要把測試 fixture、RDKit 描述符或 fake model adapter 當成真實世界準確率、實驗藥效或真正模型推論。

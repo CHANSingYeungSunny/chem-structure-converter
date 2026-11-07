@@ -1,0 +1,20 @@
+import importlib.util
+from pathlib import Path
+
+import pytest
+
+
+@pytest.mark.skipif(importlib.util.find_spec("streamlit") is None, reason="Optional UI dependency not installed")
+def test_ui_initial_and_result_views():
+    from streamlit.testing.v1 import AppTest
+
+    app = AppTest.from_file(str(Path(__file__).resolve().parents[1] / "app.py")).run()
+    assert not app.exception
+    assert app.title[0].value == "ChemBridge 分子格式轉換"
+    manifest = {"detection": {"format": "smiles", "reason": "test fixture", "warnings": []},
+                "converted_records": 1, "failed_records": 0}
+    data = {"molecules": [{"name": "ethanol", "smiles": "CCO", "properties": {"hbd": 1}}]}
+    app.session_state["result"] = (manifest, data, [], [], b"test zip fixture")
+    app.run()
+    assert not app.exception
+    assert len(app.dataframe) == 1

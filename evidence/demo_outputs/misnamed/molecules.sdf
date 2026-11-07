@@ -1,0 +1,53 @@
+input
+     RDKit          2D
+
+  3  2  0  0  0  0  0  0  0  0999 V2000
+    0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    1.2990    0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0
+    2.5981   -0.0000    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0
+  1  2  1  0
+  2  3  1  0
+M  END
+>  <CB_formula>  (1) 
+C2H6O
+
+>  <CB_molecular_weight_Da>  (1) 
+46.069
+
+>  <CB_exact_mass_Da>  (1) 
+46.041864812
+
+>  <CB_rdkit_logp>  (1) 
+-0.0014000000000000123
+
+>  <CB_tpsa_A2>  (1) 
+20.23
+
+>  <CB_hbd>  (1) 
+1
+
+>  <CB_hba>  (1) 
+1
+
+>  <CB_rotatable_bonds>  (1) 
+0
+
+>  <CB_rings>  (1) 
+0
+
+>  <CB_heavy_atoms>  (1) 
+3
+
+>  <CB_formal_charge>  (1) 
+0
+
+>  <CB_fragments>  (1) 
+1
+
+>  <CB_qed>  (1) 
+0.4068079656553945
+
+>  <CB_record_id>  (1) 
+m00001
+
+$$$$

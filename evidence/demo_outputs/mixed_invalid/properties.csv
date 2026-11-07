@@ -1,0 +1,2 @@
+﻿id,record_index,name,canonical_smiles,formula,molecular_weight_Da,exact_mass_Da,rdkit_logp,tpsa_A2,hbd,hba,rotatable_bonds,rings,heavy_atoms,formal_charge,fragments,qed
+m00001,2,good,CCO,C2H6O,46.069,46.041864812,-0.0014000000000000123,20.23,1,1,0,0,3,0,1,0.4068079656553945

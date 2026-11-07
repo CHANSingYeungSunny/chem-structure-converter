@@ -16,7 +16,7 @@
 | 完整测试 | `81 passed / 0 failed` | `python -m pytest -q` |
 | Torch Molecule Studio 整合 | **未完成**（真正源码未提供） | `docs/DELIVERY_REPORT_zh.md` 第 9 节 |
 
-仓库：`https://github.com/CHANSingYeungSunny/chem-structure-converter`，branch `main`；本页对应提交 `0d5b41b`。
+仓库：`https://github.com/CHANSingYeungSunny/chem-structure-converter`，branch `main`；V1 上传判定功能由提交 `0d5b41b` 引入，最新提交请见仓库的 Commits 页面。
 
 ### 一眼看懂的流程
 

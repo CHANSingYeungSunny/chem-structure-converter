@@ -4,13 +4,41 @@
 
 這是可獨立執行的 MVP v0.1.0，適合之後整合到 **Torch Molecule Studio**。它不是該 Studio 的原始碼，也尚未完成 Studio 整合。`liugangcode/torch-molecule` 是分子機器學習套件；本工具的格式處理由 RDKit 負責，預測模型透過獨立 adapter 日後接入。
 
+## 目前进度（2026-11-08）
+
+| 阶段 | 状态 | 证据 |
+|---|---|---|
+| 读码核对、环境修复、本机实跑 | 完成 | `evidence/windows_run_20261107/`、`docs/DELIVERY_REPORT_zh.md` |
+| 真实浏览器上传／选栏／ZIP 下载 | 完成 | `evidence/windows_run_20261107/ui_browser_test.md` |
+| 公开＋合成样本人工标注验收表 | 完成（**非真实世界准确率**） | `evidence/acceptance_matrix.xlsx`、`docs/ACCEPTANCE_MATRIX_zh.md` |
+| GitHub 建立、推送、干净 clone 重现 | 完成 | `docs/DELIVERY_EVIDENCE_zh.md` |
+| 未知上传判定 MVP（MOL／SDF／CSV／纯 SMILES） | 完成 | `chembridge/upload_workflow.py`、`docs/upload_detection_mvp.md` |
+| 完整测试 | `81 passed / 0 failed` | `python -m pytest -q` |
+| Torch Molecule Studio 整合 | **未完成**（真正源码未提供） | `docs/DELIVERY_REPORT_zh.md` 第 9 节 |
+
+仓库：`https://github.com/CHANSingYeungSunny/chem-structure-converter`，branch `main`；本页对应提交 `0d5b41b`。
+
+### 一眼看懂的流程
+
+```mermaid
+flowchart LR
+    A["上传档案 / CLI"] --> B["看内容认格式 不只看副档名"]
+    B --> C["逐笔读分子 用 RDKit 验证"]
+    C --> D["算性质 / 画结构图 / 转格式"]
+    C --> E["坏资料清单 保留原文与列号"]
+    D --> F["manifest 执行纪录 + 结果 ZIP"]
+    E --> F
+```
+
+较完整的 V1 判定流程（四种状态、SDF／MOL 优先级、错误码、续跑）见下方「流程图：未知上传判定（V1）」。
+
 ## 先看哪裡
 
 1. 零基礎先讀 `docs/Engineering_Starter_Guide_zh.pdf`，或可編輯 Word 同名檔。
 2. 用下列命令執行 `scripts/first_steps.py`，理解「文字 → 分子圖 → 計算／畫圖」。
 3. 執行 `scripts/run_demo.py`，打開輸出圖片、性質表及錯誤清單。
 4. 看 `chembridge/io.py`、`chembridge/pipeline.py`，對照指南的核心程式。
-5. 把 `prompts/DEEPSEEK_EXECUTION_PROMPT_zh.txt` 交給有檔案／終端機權限的 coding agent，繼續做驗收及 Studio 整合。
+5. 验收表、交付报告与推送已完成（见「目前进度」）；两份提示词原文保留在 `prompts/`。Studio 整合仍待真正的 Studio repo／ZIP。
 
 ## Windows 安裝與執行
 
@@ -36,9 +64,11 @@ py -3.12 -m venv .venv
 
 每次 `--out` 必須是尚未存在的資料夾；這是避免覆蓋的設計。例子若已跑過，請換 `second_run` 等名稱。
 
-macOS/Linux：`python3 -m venv .venv`，接著用 `.venv/bin/python` 執行同樣的 pip、demo 和 `-m chembridge` 命令。上游交付的 `39 passed` 與 `evidence/environment.json` 來自 Linux / Python 3.12；**本机 Windows 11 / Python 3.12.14 已另行实跑完成**（`46 passed in 32.49s`、三个 demo、真实浏览器上传／选栏／下载、23 笔验收表），证据在 `evidence/windows_run_20261107/` 与 `docs/DELIVERY_REPORT_zh.md`。`start_windows.bat` 未单独实测；本机以 `python -m streamlit run app.py` 启动成功。
+macOS/Linux：`python3 -m venv .venv`，接著用 `.venv/bin/python` 執行同樣的 pip、demo 和 `-m chembridge` 命令。上游交付的 `39 passed` 與 `evidence/environment.json` 來自 Linux / Python 3.12；**本机 Windows 11 / Python 3.12.14 已另行实跑完成**（完整测试 `81 passed`、三个 demo、真实浏览器上传／选栏／下载、23 笔验收表），证据在 `evidence/windows_run_20261107/` 与 `docs/DELIVERY_REPORT_zh.md`。`start_windows.bat` 未单独实测；本机以 `python -m streamlit run app.py` 启动成功。
 
 ## 輸入範圍
+
+> 下表是既有 CLI／网页转换器 `convert_file` 的支援范围（10 种）。新增的未知上传判定流程 `process_upload` 是**独立的 V1 子集**，只认 MOL／SDF／CSV／纯 SMILES，见下方流程图。
 
 | 輸入 | 本版狀態 | 偵測／限制 |
 |---|---|---|
@@ -83,6 +113,46 @@ CSV 是容器，不是分子表示。例如 `id,name,SMILES` 中只有 SMILES �
 
 性質是依輸入結構計算／估計的數值，不等於實驗測量、毒性安全、藥效或 torch-molecule 模型預測。鹽、電荷和互變異構體不會自動標準化；重複分子也保留。Canonical SMILES 不等於完整化學身分標準化，且可能受 RDKit 版本影響。轉換到不同格式可能失去座標、屬性、原子順序等資訊；本版不宣稱普遍無損轉換。
 
+## 流程图：未知上传判定（V1）
+
+V1 只认 MOL、SDF、CSV、纯 SMILES 四种。`docs/image.png` 是原始视觉提案；下面是依实作修正后的完整流程，四状态、稳定错误码与限制见 `docs/upload_detection_mvp.md`。
+
+```mermaid
+flowchart TD
+    U["收到上传 bytes + 原档名"] --> E{"空档或读不到?"}
+    E -->|是| F1["failed · EMPTY_OR_UNREADABLE_FILE"]
+    E -->|否| D["同时检查副档名与内容证据"]
+    D --> AM{"多个强证据并存?"}
+    AM -->|是| R1["requires_user_input · AMBIGUOUS_FORMAT"]
+    AM -->|否| SD{"有效 SDF 分隔符 + 可解析记录?"}
+    SD -->|是| FMT["判定 SDF（优先于 MOL）"]
+    SD -->|否| MO{"无分隔符但 MOL block 完整?"}
+    MO -->|是| FMT2["判定 MOL"]
+    MO -->|否| TB{"可解读的 CSV 表格?"}
+    TB -->|是| COL{"可用结构栏数量"}
+    TB -->|否| SME{"纯 SMILES 取样可解析?"}
+    SME -->|是| FMT3["纯 SMILES 逐行"]
+    SME -->|否| F4["failed · UNSUPPORTED_OR_UNKNOWN_FORMAT"]
+    COL -->|0| F2["failed · NO_STRUCTURE_FIELD"]
+    COL -->|多个| R2["requires_user_input · MULTIPLE_STRUCTURE_FIELDS"]
+    COL -->|1| REC["逐笔独立解析 保留列号与原文"]
+    FMT --> REC
+    FMT2 --> REC
+    FMT3 --> REC
+    REC --> OKM["成功：性质 / 结构图 / 格式转换"]
+    REC --> ERR["失败：MOLECULE_PARSE_FAILED"]
+    OKM --> AGG{"成功记录数?"}
+    ERR --> AGG
+    AGG -->|全部| S1["success"]
+    AGG -->|部分| S2["partial_success 保留有效结果"]
+    AGG -->|零| F3["failed · NO_VALID_MOLECULES"]
+    R1 -. 选格式后续跑 .-> D
+    R2 -. 选栏位后续跑 不需重传 .-> REC
+    D -. 副档名不符 .-> W["警告 EXTENSION_CONTENT_MISMATCH 保留原档名"]
+```
+
+程序入口是 `chembridge.process_upload(data, filename, *, selected_format, selected_field)`，回传 typed `UploadResult`（状态、代码、四项计数、成功结果、失败明细、候选格式／栏位）。网页界面把上传内容存在 `st.session_state`，选完栏位或格式直接续跑，不用重新上传。
+
 ## 驗證
 
 ```powershell
@@ -100,7 +170,7 @@ UI 測試在未安裝 Streamlit 時會跳過；裝了 `requirements-ui.txt` 則�
 .\.venv\Scripts\python.exe evidence\windows_run_20261107\build_acceptance.py       # 23 笔验收表与 xlsx
 ```
 
-本机实跑结果：`46 passed in 32.49s`；三个 demo 为 `5/0`、`1/2`、`1/0（侦测 mol）`；CLI 结束码 `0,1,0,2,0,2`；真实浏览器上传／选栏／ZIP 下载成功；详见 `docs/DELIVERY_REPORT_zh.md`。
+本机实跑结果：`81 passed / 0 failed`（含 `tests/test_upload_mvp.py` 29 例与 `tests/test_upload_mvp_ui.py` 6 例 AppTest）；三个 demo 为 `5/0`、`1/2`、`1/0（侦测 mol）`；CLI 结束码 `0,1,0,2,0,2`；真实浏览器上传／选栏／ZIP 下载成功；详见 `docs/DELIVERY_REPORT_zh.md`。
 
 > 本机环境备注：这台 Windows 上 `.venv\Scripts\python.exe -m pip install` 会异常空转，因此安装改用系统 Python 3.10 的 pip 搭配 `--target` 与 cp312 wheel 标签，把官方 wheel 直接装进 venv 的 `site-packages`；完整日志在 `evidence/windows_run_20261107/bootstrap_install.txt`。系统 Python 3.9／3.10 没有因此被修改。
 
@@ -119,12 +189,22 @@ Studio 的後端可先將上傳檔存入獨立 job 目錄，再呼叫此函式�
 
 ## 進一步學習
 
+`docs/DELIVERY_REPORT_zh.md`：中文交付报告（问题定义、支援矩阵、架构、关键程式白话解说、真实命令与结果、已完成／未完成、资讯损失、下一步）。
+
+`docs/ACCEPTANCE_MATRIX_zh.md`：23 笔验收表的来源、分母、排除规则与限制声明。
+
+`docs/DEMO_SCRIPT_zh.md`：3–5 分钟示范脚本（成功／混合坏资料／歧义三案例），逐结果标注对应程式段落。
+
+`docs/RETURN_RESULTS_FILLED_zh.md`：可带回 ChatGPT 的 13 项执行摘要。
+
+`docs/upload_detection_mvp.md`：V1 未知上传判定规格、四状态、稳定错误码与完整 Mermaid 流程图；原始视觉提案为 `docs/image.png`。
+
 `docs/TORCH_MOLECULE_SOURCE_MAP_zh.md`：套件結構與讀碼順序。
 
 `docs/ENGINEERING_PLAN_zh.md`：七日進度、交付驗收、研究延伸。
 
-`docs/GITHUB_DELIVERY_zh.md`：建立新倉庫 **chem-structure-converter**、git push，以及從全新 clone 驗證的具體步驟。實際 repo URL、visibility、branch、commit SHA、push 核對與乾淨 clone 重現結果見 `docs/DELIVERY_EVIDENCE_zh.md`；該檔在推送完成後才填入真實值，未填即代表該步驟未完成。
+`docs/GITHUB_DELIVERY_zh.md`：建立新倉庫 **chem-structure-converter**、git push，以及從全新 clone 驗證的具體步驟。實際 repo URL、branch、commit SHA、push 核對與乾淨 clone 重現結果見 `docs/DELIVERY_EVIDENCE_zh.md`（已填入真實值）。
 
 `docs/SOURCES.md`：官方文件、基礎論文、已檢視的上游 commit。
 
-本包是完整的入門工程原型交付，尚未涵蓋任意化學文件、完整 Studio 整合、機器學習模型、或學術發表結果。
+本包是完整的入門工程原型交付，尚未涵蓋任意化學文件、完整 Studio 整合、機器學習模型、或學術發表結果。V1 未知上传判定只覆盖四种格式；XYZ、CIF、CML、CDX、PDBQT、结构图片与 PDF 仍需另一条结构辨识流程。

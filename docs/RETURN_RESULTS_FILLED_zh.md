@@ -79,21 +79,21 @@
 
 ## 11. 新 GitHub repo URL／visibility／branch／commit SHA
 
-**待第五阶段完成后填入，不预先编造。** 见 `docs/DELIVERY_EVIDENCE_zh.md`。
+`https://github.com/CHANSingYeungSunny/chem-structure-converter`／`private`／`main`／首次推送 `abcefd444b1e1c0d1b614912964b86130107c4c7`。本摘要所在的第二次提交后最终 `HEAD` 见交付回报与 `docs/DELIVERY_EVIDENCE_zh.md` 末节。
 
 ## 12. git push 及远端 SHA 核对结果
 
-**待第五阶段完成后填入**（`gh repo view`、`git remote -v`、`git ls-remote` 与本机 `HEAD` 比对）。见 `docs/DELIVERY_EVIDENCE_zh.md`。
+`git push -u origin main` → `* [new branch] main -> main`；`gh repo view --json nameWithOwner,url,isPrivate` 回 `isPrivate: true`；`git remote -v` 指向上述 `.git`；`git ls-remote origin refs/heads/main` = `abcefd444b1e1c0d1b614912964b86130107c4c7`，与本机 `git rev-parse HEAD` **一致**。
 
 ## 13. 从全新 clone 建环境、跑 demo／pytest 的真实结果
 
-**待第五阶段完成后填入**（全新目录 clone、依 README 建环境、跑 demo 与 pytest，不得以原工作区结果冒充）。见 `docs/DELIVERY_EVIDENCE_zh.md`。
+全新目录 `chem-structure-converter-check` 由 `gh repo clone` 产生，`HEAD` 与远端一致。建环境时 `py -3.12` 回 `No suitable Python runtime found`，改用 IDE 内建 3.12.14 运行时建 `.venv`（`Python 3.12.14`），再以交付包内的 `bootstrap_venv.py` 绕道安装（`STAGE_EXIT_CODE=0`、106 个 site-packages 项目）。重跑结果：`first_steps.py` exit 0、`run_demo.py` exit 0（5/0、1/2、mol 1/0）、`pytest -q` **46 passed in 39.31s** exit 0。这是**干净 clone 的真实结果**，不是原工作区结果冒充；详见 `docs/DELIVERY_EVIDENCE_zh.md`。
 
 ---
 
 ## 真正测过 vs 未测（分开列）
 
-**真正测过**：本机 3.12 环境安装与版本、三个实跑命令、46 个测试、CLI 六条结束码与防覆盖、真实浏览器上传／选栏／性质／结构图／错误／ZIP 下载及内容、23 笔验收表各维度、PDF 指南全文、Studio 源码搜寻、`gh` 登录账号与仓库名可用性核对。
+**真正测过**：本机 3.12 环境安装与版本、三个实跑命令、46 个测试、CLI 六条结束码与防覆盖、真实浏览器上传／选栏／性质／结构图／错误／ZIP 下载及内容、23 笔验收表各维度、PDF 指南全文、Studio 源码搜寻、`gh` 登录账号与仓库名可用性核对、**新 GitHub repo 建立与 `git push`、远端 SHA 与本机 HEAD 比对、全新 clone 建环境后重跑 demo 与 pytest**。
 
 **只有程式测试**：Streamlit AppTest（假 session_state）、`model_adapter` 的 fake predictor、固定合成 fixtures。
 

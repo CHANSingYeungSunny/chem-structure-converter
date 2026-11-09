@@ -9,7 +9,6 @@ import streamlit as st
 
 from chembridge.io import FORMATS
 from chembridge.pipeline import DEFAULT_OUTPUTS, convert_file
-from chembridge.upload_workflow import process_upload
 
 st.set_page_config(page_title="ChemBridge 分子格式轉換", layout="wide")
 st.title("ChemBridge 分子格式轉換")
@@ -60,60 +59,3 @@ if "result" in st.session_state:
     with st.expander("執行紀錄"):
         st.json(manifest)
     st.download_button("下載全部結果 ZIP", zip_bytes, "chembridge_results.zip", "application/zip")
-
-st.divider()
-st.subheader("未知上傳檢查（V1：MOL / SDF / CSV / 純 SMILES）")
-v1_upload = st.file_uploader("上傳待檢查檔案（以內容判斷，不信任副檔名）", key="v1_upload")
-if v1_upload is not None:
-    st.session_state["v1_bytes"] = v1_upload.getvalue()
-    st.session_state["v1_name"] = v1_upload.name
-    st.session_state.pop("v1_field", None)
-    st.session_state.pop("v1_format", None)
-if "v1_bytes" in st.session_state:
-    v1_result = process_upload(
-        st.session_state["v1_bytes"], st.session_state["v1_name"],
-        selected_field=st.session_state.get("v1_field"),
-        selected_format=st.session_state.get("v1_format"),
-    )
-    if v1_result.status == "requires_user_input":
-        if v1_result.candidate_fields:
-            v1_field = st.selectbox("選擇分子結構欄位", v1_result.candidate_fields)
-            if st.button("使用此欄位重新檢查"):
-                st.session_state["v1_field"] = v1_field
-                v1_result = process_upload(
-                    st.session_state["v1_bytes"], st.session_state["v1_name"],
-                    selected_field=v1_field)
-        elif v1_result.candidate_formats:
-            v1_format = st.selectbox("選擇檔案格式", v1_result.candidate_formats)
-            if st.button("使用此格式重新檢查"):
-                st.session_state["v1_format"] = v1_format
-                v1_result = process_upload(
-                    st.session_state["v1_bytes"], st.session_state["v1_name"],
-                    selected_format=v1_format)
-        st.info("請選擇後按「重新檢查」；上傳內容已保留，不需重新上傳。")
-
-    st.write(f"原始檔名：{v1_result.original_filename}"
-             f"（副檔名 {v1_result.original_extension or '無'}）")
-    st.write(f"狀態：{v1_result.status}；格式：{v1_result.detected_format or '未判定'}；"
-             f"成功 {v1_result.successful_records}／失敗 {v1_result.failed_records}／"
-             f"略過 {v1_result.skipped_records}／總計 {v1_result.total_records}")
-    if v1_result.code:
-        st.write(f"代碼：{v1_result.code}；{v1_result.message}")
-    if v1_result.selected_structure_field:
-        st.write(f"使用欄位：{v1_result.selected_structure_field}")
-    if v1_result.candidate_fields:
-        st.write(f"候選欄位：{', '.join(v1_result.candidate_fields)}")
-    if v1_result.candidate_formats:
-        st.write(f"候選格式：{', '.join(v1_result.candidate_formats)}")
-    if v1_result.successful_results:
-        st.write("成功結構：" + ", ".join(
-            m.canonical_smiles for m in v1_result.successful_results))
-    if v1_result.failed_record_details:
-        st.write("失敗記錄：" + "；".join(
-            f"第 {d.source_record_number} 列（{d.raw_structure_value!r}）：{d.message}"
-            for d in v1_result.failed_record_details))
-    if v1_result.status == "failed":
-        st.error(f"{v1_result.code}: {v1_result.message}")
-    for warning in v1_result.warnings:
-        st.warning(warning)
-    st.json(v1_result.to_dict())
